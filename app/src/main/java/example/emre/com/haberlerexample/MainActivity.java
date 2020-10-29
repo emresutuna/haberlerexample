@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
                     Log.d("Response",new Gson().toJson(response.body()));
                     progressBar.setVisibility(View.GONE);
                     recyclerView.setLayoutManager(new LinearLayoutManager(context));
-                    adapter=new NewsAdapter(MainActivity.this,news);
+                    adapter=new NewsAdapter(MainActivity.this,news,response.body());
                     recyclerView.setAdapter(adapter);
 
                 }

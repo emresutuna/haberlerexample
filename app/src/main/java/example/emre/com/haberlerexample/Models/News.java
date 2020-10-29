@@ -1,5 +1,7 @@
 package example.emre.com.haberlerexample.Models;
 
+import java.util.ArrayList;
+
 public class News {
     private String category;
     private String title;
@@ -13,7 +15,7 @@ public class News {
     private String webUrl;
     private long commentCount;
     private String imageSize;
-    private Body[] body;
+    private ArrayList<Body>  body;
     private Object[] related;
     private Emoji emoji;
     private Object[] topComments;
@@ -46,8 +48,8 @@ public class News {
     public String getImageSize() { return imageSize; }
     public void setImageSize(String value) { this.imageSize = value; }
 
-    public Body[] getBody() { return body; }
-    public void setBody(Body[] value) { this.body = value; }
+    public ArrayList<Body> getBody() { return body; }
+    public void setBody(ArrayList<Body> value) { this.body = value; }
 
     public Object[] getRelated() { return related; }
     public void setRelated(Object[] value) { this.related = value; }
