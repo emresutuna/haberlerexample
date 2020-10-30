@@ -60,8 +60,10 @@ public class DetailActivity extends AppCompatActivity {
         Log.d("News",newsModel.getNews().get(0).getImageURL());
         //dotsIndicator=findViewById(R.id.tabDots);
         ScrollingPagerIndicator indicator = findViewById(R.id.indicator);
-        viewPagerAdapter= new ViewPagerAdapter(this,newsModel.getNews());
+        viewPagerAdapter= new ViewPagerAdapter(this,newsModel.getNews(),this);
         viewPager.setAdapter(viewPagerAdapter);
+        viewPager.setOffscreenPageLimit(1);
+
         viewPager.setCurrentItem(currentposition);
         indicator.attachToPager(viewPager);
         //dotsIndicator.setViewPager(viewPager);

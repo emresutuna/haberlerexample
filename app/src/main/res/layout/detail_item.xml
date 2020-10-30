@@ -2,15 +2,37 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <VideoView
+        <FrameLayout
+            android:id="@+id/video_frame"
+            android:layout_width="fill_parent"
+            android:layout_height="200dp"
+            android:background="#000"
+            >
+
+        <com.google.android.exoplayer2.ui.PlayerView
             android:id="@+id/video"
+            app:resize_mode="fit"
+            app:rewind_increment="10000"
+            app:use_controller="true"
+            app:player_layout_id="@layout/exo_simple_player_view"
+            app:controller_layout_id="@layout/custom_controller"
             android:layout_width="match_parent"
-            android:layout_height="200dp"/>
+            android:layout_height="200dp"
+            />
+
+        <ProgressBar
+            android:id="@+id/progressVideo"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center_vertical|center_horizontal"
+            />
+        </FrameLayout>
         <LinearLayout
             android:layout_marginHorizontal="10dp"
             android:orientation="vertical"
@@ -35,7 +57,6 @@
         <LinearLayout
             android:layout_marginHorizontal="10dp"
             android:id="@+id/linearDetay"
-            android:background="#fff0"
             android:layout_below="@id/video"
             android:orientation="vertical"
             android:layout_width="match_parent"
